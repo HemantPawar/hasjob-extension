@@ -2,5 +2,9 @@
     "extends": "airbnb-base",
     "plugins": [
         "import"
-    ]
+    ],
+    "globals": {
+      "chrome": true,
+      "WebSocket": true
+    }
 }
