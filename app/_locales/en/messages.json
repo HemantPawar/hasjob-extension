@@ -4,7 +4,7 @@
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "Unofficial extension for hasjob.co",
+    "message": "Unofficial job search extension for hasjob.co",
     "description": "The description of the application"
   }
 }
