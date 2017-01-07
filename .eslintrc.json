@@ -6,5 +6,12 @@
     "globals": {
       "chrome": true,
       "WebSocket": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "modules": true
+      }
     }
 }
