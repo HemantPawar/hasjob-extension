@@ -7,8 +7,7 @@ const LIVERELOAD_PORT = 35729;
 const connection = new WebSocket(`ws://${LIVERELOAD_HOST + LIVERELOAD_PORT}/livereload`);
 
 connection.onerror = (error) => {
-  // eslint-disable-next-line no-console
-  console.error('reload connection got error:', error);
+  console.error('reload connection got error:', error); // eslint-disable-line
 };
 
 connection.onmessage = (e) => {
