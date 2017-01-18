@@ -1,2 +1,2 @@
 # Hasjob extension
-Unofficial job search extension for hasjob.co
+Unofficial job search extension for [hasjob](http://hasjob.co)
