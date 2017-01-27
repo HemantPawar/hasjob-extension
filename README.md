@@ -2,4 +2,4 @@
 Unofficial job search extension for [Hasjob](http://hasjob.co)
 
 # License
-MIT © [Hemant Pawar](http://www.hemantpawar.com/)
+MIT © [Hemant Pawar](https://github.com/HemantPawar)
