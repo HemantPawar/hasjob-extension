@@ -75,7 +75,7 @@ gulp.task('chromeManifest', () => {
         ]
       }
   }))
-  .pipe($.if('*.css', $.cleanCss({compatibility: '*'})))
+  .pipe($.if('*.css', $.cleanCss({ compatibility: '*' })))
   .pipe($.if('*.js', $.sourcemaps.init()))
   .pipe($.if('*.js', $.uglify()))
   .pipe($.if('*.js', $.sourcemaps.write('.')))
@@ -120,7 +120,7 @@ gulp.task('watch', ['lint', 'babel'], () => {
 });
 
 gulp.task('size', () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+  return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
 });
 
 gulp.task('wiredep', () => {
@@ -145,6 +145,6 @@ gulp.task('build', (cb) => {
     'size', cb);
 });
 
-gulp.task('default', ['clean'], cb => {
+gulp.task('default', ['clean'], (cb) => {
   runSequence('build', cb);
 });
