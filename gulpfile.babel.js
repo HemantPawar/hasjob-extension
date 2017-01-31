@@ -53,14 +53,14 @@ gulp.task('images', () => {
     .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('html',  () => {
+gulp.task('html', () => {
   return gulp.src('app/*.html')
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
+    .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
     .pipe($.sourcemaps.init())
     .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.cleanCss({compatibility: '*'})))
+    .pipe($.if('*.css', $.cleanCss({ compatibility: '*' })))
     .pipe($.sourcemaps.write())
-    .pipe($.if('*.html', $.htmlmin({removeComments: true, collapseWhitespace: true})))
+    .pipe($.if('*.html', $.htmlmin({ removeComments: true, collapseWhitespace: true })))
     .pipe(gulp.dest('dist'));
 });
 
