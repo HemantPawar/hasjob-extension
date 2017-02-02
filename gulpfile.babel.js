@@ -46,7 +46,7 @@ gulp.task('images', () => {
       // as hooks for embedding and styling
       svgoPlugins: [{ cleanupIDs: false }]
     }))
-    .on('error', function (err) {
+    .on('error', (err) => {
       console.log(err);
       this.end();
     })))
@@ -131,7 +131,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('package', function () {
+gulp.task('package', () => {
   var manifest = require('./dist/manifest.json');
   return gulp.src('dist/**')
       .pipe($.zip('Hasjob-' + manifest.version + '.zip'))
