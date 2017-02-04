@@ -19,7 +19,7 @@ gulp.task('extras', () => {
     '!app/*.html',
   ], {
     base: 'app',
-    dot: true
+    dot: true,
   }).pipe(gulp.dest('dist'));
 });
 
@@ -33,8 +33,8 @@ function lint(files, options) {
 
 gulp.task('lint', lint('app/scripts.babel/**/*.js', {
   env: {
-    es6: true
-  }
+    es6: true,
+  },
 }));
 
 gulp.task('images', () => {
@@ -47,7 +47,7 @@ gulp.task('images', () => {
       svgoPlugins: [{ cleanupIDs: false }]
     }))
     .on('error', (err) => {
-      console.log(err);
+      console.log(err); // eslint-disable-line
       this.end();
     })))
     .pipe(gulp.dest('dist/images'));
@@ -71,10 +71,10 @@ gulp.task('chromeManifest', () => {
       background: {
         target: 'scripts/background.js',
         exclude: [
-          'scripts/chromereload.js'
-        ]
-      }
-  }))
+          'scripts/chromereload.js',
+        ],
+      },
+    }))
   .pipe($.if('*.css', $.cleanCss({ compatibility: '*' })))
   .pipe($.if('*.js', $.sourcemaps.init()))
   .pipe($.if('*.js', $.uglify()))
@@ -112,7 +112,7 @@ gulp.task('watch', ['lint', 'babel'], () => {
     'app/scripts/**/*.js',
     'app/images/**/*',
     'app/styles/**/*',
-    'app/_locales/**/*.json'
+    'app/_locales/**/*.json',
   ]).on('change', $.livereload.reload);
 
   gulp.watch('app/scripts.babel/**/*.js', ['lint', 'babel']);
@@ -125,16 +125,14 @@ gulp.task('size', () => {
 
 gulp.task('wiredep', () => {
   gulp.src('app/*.html')
-    .pipe(wiredep({
-      ignorePath: /^(\.\.\/)*\.\./
-    }))
+    .pipe(wiredep({ ignorePath: /^(\.\.\/)*\.\./ }))
     .pipe(gulp.dest('app'));
 });
 
 gulp.task('package', () => {
-  var manifest = require('./dist/manifest.json');
+  const manifest = require('./dist/manifest.json');
   return gulp.src('dist/**')
-      .pipe($.zip('Hasjob-' + manifest.version + '.zip'))
+      .pipe($.zip(`Hasjob-${manifest.version}.zip`))
       .pipe(gulp.dest('package'));
 });
 
