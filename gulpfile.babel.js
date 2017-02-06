@@ -6,29 +6,25 @@ import runSequence from 'run-sequence';
 import { stream as wiredep } from 'wiredep';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
-import es from 'event-stream';
+import es from 'event-stream'; // eslint-disable-line
 
 const $ = gulpLoadPlugins();
 
-gulp.task('extras', () => {
-  return gulp.src([
-    'app/*.*',
-    'app/_locales/**',
-    '!app/scripts.babel',
-    '!app/*.json',
-    '!app/*.html',
-  ], {
-    base: 'app',
-    dot: true,
-  }).pipe(gulp.dest('dist'));
-});
+gulp.task('extras', () => gulp.src([
+  'app/*.*',
+  'app/_locales/**',
+  '!app/scripts.babel',
+  '!app/*.json',
+  '!app/*.html',
+], {
+  base: 'app',
+  dot: true,
+}).pipe(gulp.dest('dist')));
 
 function lint(files, options) {
-  return () => {
-    return gulp.src(files)
-      .pipe($.eslint(options))
-      .pipe($.eslint.format());
-  };
+  return () => gulp.src(files)
+    .pipe($.eslint(options))
+    .pipe($.eslint.format());
 }
 
 gulp.task('lint', lint('app/scripts.babel/**/*.js', {
@@ -37,50 +33,44 @@ gulp.task('lint', lint('app/scripts.babel/**/*.js', {
   },
 }));
 
-gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
-    .pipe($.if($.if.isFile, $.cache($.imagemin({
-      progressive: true,
-      interlaced: true,
-      // don't remove IDs from SVGs, they are often used
-      // as hooks for embedding and styling
-      svgoPlugins: [{ cleanupIDs: false }]
-    }))
-    .on('error', (err) => {
-      console.log(err); // eslint-disable-line
-      this.end();
-    })))
-    .pipe(gulp.dest('dist/images'));
-});
+gulp.task('images', () => gulp.src('app/images/**/*')
+  .pipe($.if($.if.isFile, $.cache($.imagemin({
+    progressive: true,
+    interlaced: true,
+    // don't remove IDs from SVGs, they are often used
+    // as hooks for embedding and styling
+    svgoPlugins: [{ cleanupIDs: false }],
+  }))
+  .on('error', (err) => {
+    console.log(err); // eslint-disable-line
+    this.end();
+  })))
+  .pipe(gulp.dest('dist/images')));
 
-gulp.task('html', () => {
-  return gulp.src('app/*.html')
-    .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
-    .pipe($.sourcemaps.init())
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.cleanCss({ compatibility: '*' })))
-    .pipe($.sourcemaps.write())
-    .pipe($.if('*.html', $.htmlmin({ removeComments: true, collapseWhitespace: true })))
-    .pipe(gulp.dest('dist'));
-});
+gulp.task('html', () => gulp.src('app/*.html')
+  .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
+  .pipe($.sourcemaps.init())
+  .pipe($.if('*.js', $.uglify()))
+  .pipe($.if('*.css', $.cleanCss({ compatibility: '*' })))
+  .pipe($.sourcemaps.write())
+  .pipe($.if('*.html', $.htmlmin({ removeComments: true, collapseWhitespace: true })))
+  .pipe(gulp.dest('dist')));
 
-gulp.task('chromeManifest', () => {
-  return gulp.src('app/manifest.json')
-    .pipe($.chromeManifest({
-      buildnumber: true,
-      background: {
-        target: 'scripts/background.js',
-        exclude: [
-          'scripts/chromereload.js',
-        ],
-      },
-    }))
+gulp.task('chromeManifest', () => gulp.src('app/manifest.json')
+  .pipe($.chromeManifest({
+    buildnumber: true,
+    background: {
+      target: 'scripts/background.js',
+      exclude: [
+        'scripts/chromereload.js',
+      ],
+    },
+  }))
   .pipe($.if('*.css', $.cleanCss({ compatibility: '*' })))
   .pipe($.if('*.js', $.sourcemaps.init()))
   .pipe($.if('*.js', $.uglify()))
   .pipe($.if('*.js', $.sourcemaps.write('.')))
-  .pipe(gulp.dest('dist'));
-});
+  .pipe(gulp.dest('dist')));
 
 gulp.task('babel', () => {
   const files = [
@@ -119,9 +109,8 @@ gulp.task('watch', ['lint', 'babel'], () => {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('size', () => {
-  return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
-});
+gulp.task('size', () => gulp.src('dist/**/*')
+  .pipe($.size({ title: 'build', gzip: true })));
 
 gulp.task('wiredep', () => {
   gulp.src('app/*.html')
@@ -130,7 +119,7 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('package', () => {
-  const manifest = require('./dist/manifest.json');
+  const manifest = require('./dist/manifest.json'); // eslint-disable-line
   return gulp.src('dist/**')
       .pipe($.zip(`Hasjob-${manifest.version}.zip`))
       .pipe(gulp.dest('package'));
