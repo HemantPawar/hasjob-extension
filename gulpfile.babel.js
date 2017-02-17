@@ -53,7 +53,10 @@ gulp.task('html', () => gulp.src('app/*.html')
   .pipe($.if('*.js', $.uglify()))
   .pipe($.if('*.css', $.cleanCss({ compatibility: '*' })))
   .pipe($.sourcemaps.write())
-  .pipe($.if('*.html', $.htmlmin({ removeComments: true, collapseWhitespace: true })))
+  .pipe($.if('*.html', $.htmlmin({
+    removeComments: true,
+    collapseWhitespace: true,
+  })))
   .pipe(gulp.dest('dist')));
 
 gulp.task('chromeManifest', () => gulp.src('app/manifest.json')
