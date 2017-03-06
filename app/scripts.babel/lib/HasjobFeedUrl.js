@@ -13,8 +13,8 @@ function getDomain(url) {
 }
 
 export default function getFeedUrl(url) {
-  const hostname = getDomain(url);
+  const domain = getDomain(url);
 
-  return `https://hasjob.co/${hostname}/feed`;
+  return `https://hasjob.co/${domain}/feed`;
 }
 
