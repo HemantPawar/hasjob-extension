@@ -1,5 +1,5 @@
 {
-  "name": "hasjob",
+  "name": "hasjob-extension",
   "private": true,
   "engines": {
     "node": ">=0.8.0"
