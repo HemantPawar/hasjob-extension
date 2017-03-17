@@ -1,5 +1,5 @@
 const jobList = html => `<ul>${html}</ul>`;
-const listItem = job => `<li><a href="${job.link}">${job.title}</a></li>`;
+const listItem = job => `<li><a href="${job.link}" target="_blank">${job.title}</a></li>`;
 
 const textToXml = text => new DOMParser().parseFromString(text, 'text/xml');
 const xmlToHtml = (xml) => {
