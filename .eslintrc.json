@@ -5,6 +5,7 @@
     ],
     "globals": {
       "chrome": true,
+      "fetch": true,
       "URL": true,
       "WebSocket": true
     },
