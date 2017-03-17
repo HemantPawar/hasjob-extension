@@ -1,4 +1,4 @@
-const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
+import pipe from './fp';
 
 const createUrlObject = url => new URL(url);
 const getHostname = location => location.hostname;
