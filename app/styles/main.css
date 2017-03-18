@@ -1,3 +1,74 @@
 body {
-  padding: 20px;
+  font-family: "Fira Sans",arial,sans-serif;
+  background: #e8e7e6;
+}
+
+.page-header h1 {
+  min-width: 292px;
+  font-weight: bold;
+}
+
+.page-header h1 a {
+  color: #df5e0e;
+  text-decoration: none !important;
+}
+
+.page-header h1 small {
+  color: #816894;
+  font-size: 70%;
+}
+
+.page-info {
+  color: #333;
+  margin: 24px 18px;
+  font-size: 16px;
+  text-align: center;
+}
+.page-content ul {
+  font-family: "McLaren",sans-serif;
+  font-size: 16px;
+  background: #ffffa2;
+}
+
+.page-content ul a {
+  text-decoration: none;
+  color: #333;
+}
+
+.page-content ul a:hover {
+  color: #df5e0e;
+}
+
+.page-content li {
+  padding: 6px 6px;
+}
+
+.stickie {
+  background: #ffffa2;
+  position: relative;
+  display: block;
+  font-family: "McLaren",sans-serif;
+  overflow: visible;
+  padding: 12px 9px;
+  word-wrap: break-word;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 10px rgba(0,0,0,0.1) inset;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 10px rgba(0,0,0,0.1) inset
+}
+
+.page-footer {
+  margin-top: 24px;
+  margin-bottom: 10px;
+  color: #816894;
+  font-size: 16px;
+  text-align: center;
+}
+
+.page-footer a {
+  color: #df5e0e;
+  text-decoration: none !important;
+  font-weight: bold;
 }
