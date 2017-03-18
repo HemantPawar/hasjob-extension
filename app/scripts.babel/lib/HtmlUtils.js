@@ -17,7 +17,7 @@ const createHtml = (jobList) => {
     return `<ul>${htmlJobList}</ul>`;
   }
 
-  return '<div>Sorry, no jobs listed.</div>';
+  return '<div class="page-info">Sorry, no jobs listed on hasjob for this website.</div>';
 };
 
 const textToXml = text => new DOMParser().parseFromString(text, 'text/xml');
