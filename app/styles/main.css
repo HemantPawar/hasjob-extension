@@ -24,6 +24,7 @@ body {
   font-size: 16px;
   text-align: center;
 }
+
 .page-content ul {
   font-family: "McLaren",sans-serif;
   font-size: 16px;
@@ -56,7 +57,7 @@ body {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 10px rgba(0,0,0,0.1) inset;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 10px rgba(0,0,0,0.1) inset
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 10px rgba(0,0,0,0.1) inset;
 }
 
 .page-footer {
@@ -71,4 +72,8 @@ body {
   color: #df5e0e;
   text-decoration: none !important;
   font-weight: bold;
+}
+
+.error-code {
+  color: #df5e0e;
 }

@@ -4,7 +4,7 @@ import { appendData } from './HtmlUtils';
 const errorMessage = error => (
   `<div class="page-info">
     <h3>Something went wrong!!!</h3>
-    <code>${error}</code>
+    <code class="error-code">${error}</code>
   </div>`
 );
 
