@@ -13,6 +13,10 @@ body {
   text-decoration: none !important;
 }
 
+.page-header h1 a:focus {
+  outline: none;
+}
+
 .page-header h1 small {
   color: #816894;
   font-size: 70%;
@@ -27,7 +31,7 @@ body {
 
 .page-content ul {
   font-family: "McLaren",sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   background: #ffffa2;
 }
 
@@ -41,7 +45,7 @@ body {
 }
 
 .page-content li {
-  padding: 6px 6px;
+  padding: 4px 4px;
 }
 
 .stickie {
