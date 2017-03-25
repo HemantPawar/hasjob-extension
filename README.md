@@ -2,7 +2,7 @@
 Unofficial job search extension for [Hasjob](http://hasjob.co). Allows the user to quickly check if any job is listed on [Hasjob](http://hasjob.co) for the current website.
 
 ## Getting started
-You'll find source files in `script.babel` directory. Boilerplate code is genereate using Yeoman generator-chrome-extension.
+You'll find source files in `script.babel` directory. Yeoman generator-chrome-extension was used for generating boilerplate code.
 
 ### Install dependencies
 Nvigate to root folder in your terminal to install project dependencies.
@@ -46,6 +46,11 @@ You can also distribute your project with compressed file using the Chrome Devel
 gulp package
 ```
 
+It removes the generated `dist` directory and `.tmp` files.
+
+```bash
+gulp clean
+```
 
 ## License
 MIT © [Hemant Pawar](https://github.com/HemantPawar)
