@@ -61,13 +61,8 @@ gulp.task('html', () => gulp.src('app/*.html')
 
 gulp.task('chromeManifest', () => gulp.src('app/manifest.json')
   .pipe($.chromeManifest({
-    buildnumber: true,
-    background: {
-      target: 'scripts/background.js',
-      exclude: [
-        'scripts/chromereload.js',
-      ],
-    },
+    buildnumber: false,
+    exclude: ['background'],
   }))
   .pipe($.if('*.css', $.cleanCss({ compatibility: '*' })))
   .pipe($.if('*.js', $.sourcemaps.init()))
