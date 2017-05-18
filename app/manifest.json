@@ -1,13 +1,14 @@
 {
   "name": "__MSG_appName__",
   "version": "1.0.1",
+  "author": "Hemant Pawar",
   "manifest_version": 2,
+  "default_locale": "en",
   "description": "__MSG_appDescription__",
   "icons": {
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
   },
-  "default_locale": "en",
   "background": {
     "scripts": [
       "scripts/chromereload.js",
