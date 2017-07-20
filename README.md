@@ -53,4 +53,4 @@ gulp clean
 ```
 
 ## License
-MIT © [Hemant Pawar](https://github.com/HemantPawar), [@HemantPawar](https://twitter.com/HemantPawar)
+MIT (c) 2017 [Hemant Pawar](https://github.com/HemantPawar), [@HemantPawar](https://twitter.com/HemantPawar)
