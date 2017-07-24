@@ -1,4 +1,4 @@
-# Hasjob extension
+# Hasjob extension [![Build Status](https://travis-ci.org/HemantPawar/hasjob-extension.svg?branch=master)](https://travis-ci.org/HemantPawar/hasjob-extension)
 Unofficial job search extension for [Hasjob](http://hasjob.co). Allows the user to quickly check if any job is listed on [Hasjob](http://hasjob.co) for the current website.
 
 ## Getting started
