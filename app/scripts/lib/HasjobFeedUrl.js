@@ -1,4 +1,4 @@
-import pipe from './fp';
+import pipe from './fp.js';
 
 const createUrlObject = url => new URL(url);
 const getHostname = location => location.hostname;

@@ -1,7 +1,7 @@
-import tabUrl from './lib/ActiveTabUrl';
-import jobFeedUrl from './lib/HasjobFeedUrl';
-import { checkStatus, responseText, handleError } from './lib/RequestUtils';
-import { textToXml, xmlToHtml, appendData } from './lib/HtmlUtils';
+import tabUrl from './lib/ActiveTabUrl.js';
+import jobFeedUrl from './lib/HasjobFeedUrl.js';
+import { checkStatus, responseText, handleError } from './lib/RequestUtils.js';
+import { textToXml, xmlToHtml, appendData } from './lib/HtmlUtils.js';
 
 const processTabUrl = new Promise(tabUrl);
 

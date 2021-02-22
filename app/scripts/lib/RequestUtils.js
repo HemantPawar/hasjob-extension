@@ -1,5 +1,5 @@
-import pipe from './fp';
-import { appendData } from './HtmlUtils';
+import pipe from './fp.js';
+import { appendData } from './HtmlUtils.js';
 
 const errorMessage = error => (
   `<div class="page-info">

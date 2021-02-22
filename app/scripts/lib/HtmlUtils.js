@@ -1,4 +1,4 @@
-import pipe from './fp';
+import pipe from './fp.js';
 
 const jobEntries = xml => [...xml.getElementsByTagName('entry')];
 
