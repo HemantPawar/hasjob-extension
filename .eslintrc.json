@@ -1,5 +1,6 @@
 {
     "env": {
+        "browser": true,
         "es2021": true,
         "webextensions": true
     },
@@ -12,6 +13,7 @@
     },
     "rules": {
       "arrow-parens": "off",
-      "import/extensions": { "js": "always" }
+      "import/extensions": "off",
+      "operator-linebreak": "off"
     }
 }
