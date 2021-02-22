@@ -1,8 +1,8 @@
 {
   "name": "__MSG_appName__",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "Hemant Pawar",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "default_locale": "en",
   "description": "__MSG_appDescription__",
   "icons": {
@@ -10,10 +10,12 @@
     "128": "images/icon-128.png"
   },
   "permissions": [
-    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
     "https://hasjob.co/*"
   ],
-  "browser_action": {
+  "action": {
     "default_icon": {
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
