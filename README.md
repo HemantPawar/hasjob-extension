@@ -1,4 +1,5 @@
 # Hasjob extension [![Build Status](https://travis-ci.org/HemantPawar/hasjob-extension.svg?branch=master)](https://travis-ci.org/HemantPawar/hasjob-extension)
+>_upcoming **Manifest V3** related changes are in the [manifest-v3](https://github.com/HemantPawar/hasjob-extension/tree/manifest-v3) branch_
 Unofficial job search extension for [Hasjob](http://hasjob.co). Allows the user to quickly check if any job is listed on [Hasjob](http://hasjob.co) for the current website.
 
 ## Getting started
